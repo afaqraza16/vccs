@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      animation: gradientAnimation 10s infinite alternate;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .input-field label {
+      color: #000;
+    }
+
+    .input-field input[type="text"]:focus + label,
+    .input-field input[type="email"]:focus + label,
+    .input-field input[type="password"]:focus + label {
+      color: #000 !important;
+    }
+
+    .input-field input[type="text"]:focus,
+    .input-field input[type="email"]:focus,
+    .input-field input[type="password"]:focus {
+      border-bottom: 1px solid #000 !important;
+      box-shadow: 0 1px 0 0 #000 !important;
+    }
+
+    .input-field input[type="text"]:not(.browser-default):focus,
+    .input-field input[type="email"]:not(.browser-default):focus,
+    .input-field input[type="password"]:not(.browser-default):focus {
+      border-bottom: 1px solid #000 !important;
+      box-shadow: 0 1px 0 0 #000 !important;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>User Registration</h3>
+    <form>
+      <div class="input-field">
+        <input id="username" type="text" class="validate">
+        <label for="username">Username</label>
+      </div>
+      <div class="input-field">
+        <input id="email" type="email" class="validate">
+        <label for="email">Email</label>
+      </div>
+      <div class="input-field">
+        <input id="password" type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
+      <div class="input-field">
+        <input id="confirm_password" type="password" class="validate">
+        <label for="confirm_password">Confirm Password</label>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Register
+        
+      </button>
+    </form>
+  </div>
+
+  <!-- Materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
