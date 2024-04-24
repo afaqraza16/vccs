@@ -10,14 +10,27 @@
 	  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
 	  <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
 	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  </head>
-	
+ 
+	</head>
+	<style>
+		.login-page{
+			background: linear-gradient(to bottom, #3498db, #8e44ad);
+		}
+		.login-box-body {
+			background: rgba(255, 255, 255, 0.2);
+			backdrop-filter: blur(10px);
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			}
+	</style>
 	<?php
 	session_start();
 	if(isset($_SESSION['manager_id']) && !empty($_SESSION['manager_id'])){
 		header('Location: ./index.php');	
 	}	
 	?>
+	
   <body class="login-page" > 
     <div class="login-box">
       <div class="login-logo">

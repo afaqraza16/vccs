@@ -95,7 +95,8 @@
                         <?php
                         $query = "SELECT id, name FROM companyvehicle_t";
                         $result = mysqli_query($conn, $query);
-                        if ($result && mysqli_num_rows($result) > 0) {
+                        if ($result && mysqli_num_rows($result) > 0) 
+                        {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo '<option value="' . htmlspecialchars($row['id']) . '">' . htmlspecialchars($row['name']) . '</option>';
                             }
