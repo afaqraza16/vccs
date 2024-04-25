@@ -30,10 +30,6 @@
 	<?php include_once('navbar.php') ?>
 	<!-- Sidebar -->
 	<?php include_once('sidebar.php') ?>
-
-
-
-
   <div class="content-wrapper">
 
     <section class="content-header">
@@ -41,7 +37,7 @@
         Add Vehicle
       </h1>
       <ol class="breadcrumb">
-        <li><a href="./index.php"><i class="fa fa-tags"></i> Home</a></li>
+        <li><a href="./index.php"><i class="fa fa-car"></i> Home</a></li>
         <li class="active">Add Vehicle</li>
       </ol>
     </section>
@@ -50,7 +46,7 @@
 
 			 <!-- Small boxes (Stat box) -->
 		 <div class="box box-primary ">
-
+     
 				   <div class="box-header">
 					  <h3 class="box-title">Add Vehicle</h3>
 					</div>
@@ -87,7 +83,6 @@
                         ?>
                         </select>
 						</div>
-
 					<div class="form-group">
 						<label for="Category">Choose Vehicle</label>
 						<select id="vehicle" name="vehicle" class="form-control">
@@ -107,7 +102,6 @@
                         ?>
                         </select>
 						</div>
-					  
             <div  class="form-group">
             <label for="i_num">Identity Number</label>
             <input id="i_num" name="i_num" type="text" class="form-control" placeholder="Identity Number" >
@@ -124,7 +118,6 @@
                New Vehicle <i class="fa fa-car" ></i >
             </button>
         </a>
-
     </section>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

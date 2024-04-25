@@ -1,3 +1,6 @@
+<?php
+error_reporting(0);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,8 +44,9 @@
         New Vehicle
       </h1>
       <ol class="breadcrumb">
-        <li><a href="./index.php"><i class="fa fa-tags"></i> Home</a></li>
-        <li class="active">New Vehicle</li>
+        <li><a href="./index.php"><i class="fa fa-car"></i> Home</a></li>
+        <li class="active"><a href="./addvehicle.php">Vehicle</a></li>
+        <li class="active"> New Vehicle</li>
       </ol>
     </section>
 
@@ -58,7 +62,7 @@
                   <div class="row">
                     <div class="col-md-12">
                         
-                <form id="frm" name="frm" action="newvehicle.php" method="post" >
+<form id="frm" name="frm" action="newvehicle.php" method="post" >
                   
 				  <div class="box-body">
     
@@ -98,19 +102,17 @@
             <button  class="btn btn-primary" type="button" >
                Back 
             </button>
-        </a>
-
-    </section>
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
+     {
         $new_v = $_POST['new_v'];
         $v_name = $_POST['v_name'];
         if (empty($new_v) || empty($v_name)) {
-            echo "<script>alert('Please fill in all fields.');</script>";
+            
         } else {
             $sql = "INSERT INTO companyvehicle_t (name, company_id) VALUES ('$v_name', '$new_v')";
             if ($conn->query($sql) === TRUE) {
-                echo '<p style="margin-top: 5px; margin-left:40px" >New Vehicle addeded successfully</p>';
+                echo '<p style="margin-top: 20px; margin-left:0px; color: blue;" >*New Vehicle addeded successfully</p>';
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
@@ -119,9 +121,63 @@
         $conn->close();
     }
     ?>
-
+        </a>
+    </section>
+   
+</form>
     <!-- /.content -->
-  </div>
+    <section class="content" >
+      <div class="box box-primary">
+  
+  				   <div class="box-header">
+  					  <h3 class="box-title">Add New Brand </h3>
+  					</div>
+  					<div class="box-body">
+  						<form id="v_brand" name="v_brand"  method="post" >
+  					  <div class="box-body">	  
+              <div  class="form-group">
+              <label for="i_num">Add New Brand </label>
+              <input id="v_brand" name="v_brand" type="text" class="form-control" placeholder="Vehicle Brand" >
+              </div> 
+              <button  class="btn btn-primary" type="submit" name="action">Add New Brand
+              <i class="fa fa-send"></i>
+              </button>
+              <?php
+              $host = 'localhost';
+              $username = 'root';
+              $password = '';
+              $database = 'vccs_db';
+              $conn = mysqli_connect($host, $username, $password, $database);
+              if ($_SERVER["REQUEST_METHOD"] == "POST")
+              {
+                  $brand = $_POST['v_brand'];
+                  if (empty($brand)) {
+                    
+                  } else {
+                      $sql = "INSERT INTO company_t (name) VALUES ('$brand')";
+                      if ($conn->query($sql) === TRUE) {
+                          echo '<p style="margin-top: 5px; margin-left:0px; color: blue;" >*New Brand addeded successfully</p>';
+                      } else {
+                          echo "Error: " . $sql . "<br>" . $conn->error;
+                      }
+                  }
+  
+                  $conn->close();
+              }
+              ?>   
+  						  <div id='regSale_msg'>
+  								
+  						</div>
+  
+  						</div>
+  					</form>
+  
+  					</div>
+  
+  					  </div>
+    </div>
+</section>
+
   <!-- /.content-wrapper -->
   
 	<?php include_once('footer.php') ?>
