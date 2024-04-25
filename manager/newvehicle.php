@@ -33,12 +33,7 @@ error_reporting(0);
 	<?php include_once('navbar.php') ?>
 	<!-- Sidebar -->
 	<?php include_once('sidebar.php') ?>
-
-
-
-
   <div class="content-wrapper">
-
     <section class="content-header">
       <h1>
         New Vehicle
